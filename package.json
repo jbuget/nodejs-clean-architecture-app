@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "blipp": "^3.0.0",
     "hapi": "^17.2.0"
   }
 }

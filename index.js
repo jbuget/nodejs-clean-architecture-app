@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const Blipp = require('blipp');
 
 // Create a server with a host and port
 const server = Hapi.server({
@@ -19,7 +20,9 @@ server.route({
 });
 
 // Start the server
-async function start() {
+const start = async () => {
+
+  await server.register(Blipp);
 
   try {
     await server.start();
@@ -30,6 +33,6 @@ async function start() {
   }
 
   console.log('Server running at:', server.info.uri);
-}
+};
 
 start();
