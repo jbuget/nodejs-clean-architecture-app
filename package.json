@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +13,8 @@
   "dependencies": {
     "blipp": "^3.0.0",
     "hapi": "^17.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.7"
   }
 }
