@@ -20,9 +20,10 @@ The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com
 ```
 hapijs-v17-app 
  └ lib                      → Application sources 
-    └ business_rules        → Enterprise and application business rules
-    └ interface_adapters    → Adapters and formatters for use cases and entities to external agency such as Database or the Web
-    └ technical_drivers     → Frameworks and tools such as Database, the Web Framework, glue code etc.
+    └ domain                → Enterprise business rules a.k.a. Entities
+    └ features              → Application business rules a.k.a. Use Cases
+    └ interfaces            → Adapters and formatters for use cases and entities to external agency such as Database or the Web
+    └ technical             → Frameworks and tools such as Database, the Web Framework, glue code etc.
  └ node_modules (generated) → NPM dependencies
  └ test                     → Source folder for unit or functional tests
  └ index.js                 → Main application entry point
