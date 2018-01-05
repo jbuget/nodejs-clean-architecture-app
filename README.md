@@ -11,16 +11,6 @@ npm start
 
 In a browser, open [http://localhost:3000/hello](http://localhost:3000/hello).
 
-## Monitoring with PM2
-
-The application is run via the Node.js process manager [PM2](https://keymetrics.io/pm2/).
-
-To monitor the application, run:
-
-```
-npx pm2 monit
-```
-
 ## DDD and Clean Architecture
 
 The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)" principles and project structure :

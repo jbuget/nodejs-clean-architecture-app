@@ -6,7 +6,7 @@ const Blipp = require('blipp');
 // Create a server with a host and port
 const server = Hapi.server({
   host: 'localhost',
-  port: 3000
+  port: process.env.PORT || 3000
 });
 
 // Add the route
