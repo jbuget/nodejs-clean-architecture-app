@@ -15,7 +15,7 @@ server.route({
   path: '/hello',
   handler: (request, h) => {
 
-    return 'hello world';
+    return 'hello world!';
   }
 });
 

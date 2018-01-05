@@ -1,20 +1,23 @@
 {
   "name": "hapijs-v17-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A basic Hapi.js application",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "start": "node index.js",
+    "dev": "pm2 start index.js --watch --name api-dev",
+    "start": "pm2 start index.js --name api",
+    "stop": "pm2 delete api",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jérémy Buget",
+  "license": "MIT",
   "dependencies": {
     "blipp": "^3.0.0",
-    "hapi": "^17.2.0"
+    "hapi": "^17.2.0",
+    "pm2": "^2.9.1"
   },
-  "devDependencies": {
-    "nodemon": "^1.14.7"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbuget/hapijs-v17-app.git"
   }
 }
