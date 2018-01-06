@@ -6,6 +6,7 @@
 git clone git@github.com:jbuget/hapijs-v17-app.git
 cd hapijs-v17-app
 npm install
+npm test
 npm start
 ```
 
@@ -18,12 +19,23 @@ The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com
 ### Project anatomy
 
 ```
-hapijs-v17-app 
+app 
  └ lib                      → Application sources 
-    └ domain                → Enterprise business rules a.k.a. Entities
-    └ features              → Application business rules a.k.a. Use Cases
+    └ application           → Application services layer
+       └ repositories       → Data access objects interfaces (unfortunately, there is no Interface pattern in JavaScript)
+       └ use_cases          → Application business rules 
+    └ domain                → Enterprise core business layer
+       └ models             → Domain model objects such as Entities, Aggregates, Value Objects, Business Events, etc.
+       └ services           → Domain services, e.g. business objects that manipulate multiple and different Domain Models
+    └ infrastructure        → Frameworks, drivers and tools such as Database, the Web Framework, mailing/logging/glue code etc.
+       └ database           → ORM and database connection objects
+       └ webserver          → Hapi.js Web server configuration (server, routes, plugins, etc.)
+          └ routes          → Hapi.js routes declaration (route handlers are in inner layer "interfaces/controllers")
+          └ server.js       → Hapi.js server definition
     └ interfaces            → Adapters and formatters for use cases and entities to external agency such as Database or the Web
-    └ technical             → Frameworks and tools such as Database, the Web Framework, glue code etc.
+       └ controllers        → Hapi.js route handlers
+       └ serializers        → Converter objects that transform outside objects (ex: HTTP request payload) to inside objects (ex: Use Case request object)
+       └ storage            → Repository implementations
  └ node_modules (generated) → NPM dependencies
  └ test                     → Source folder for unit or functional tests
  └ index.js                 → Main application entry point
@@ -39,14 +51,46 @@ According to Uncle Bob:
 > 
 > By the same token, data formats used in an outer circle should not be used by an inner circle, especially if those formats are generate by a framework in an outer circle. We don’t want anything in an outer circle to impact the inner circles.
 
-### Crossing boundaries.
+### Data flow
 
-According to Uncle Bob:
+```
+•---------------•       •---------------• 
+| HTTP Request  |       | HTTP Response |
+•---------------•       •---------------•	
 
-> At the lower right of the diagram is an example of how we cross the circle boundaries. It shows the Controllers and Presenters communicating with the Use Cases in the next layer. Note the flow of control. It begins in the controller, moves through the use case, and then winds up executing in the presenter. Note also the source code dependencies. Each one of them points inwards towards the use cases.
-> 
-> We usually resolve this apparent contradiction by using the Dependency Inversion Principle. In a language like Java, for example, we would arrange interfaces and inheritance relationships such that the source code dependencies oppose the flow of control at just the right points across the boundary.
-> 
-> For example, consider that the use case needs to call the presenter. However, this call must not be direct because that would violate The Dependency Rule: No name in an outer circle can be mentioned by an inner circle. So we have the use case call an interface (Shown here as Use Case Output Port) in the inner circle, and have the presenter in the outer circle implement it.
-> 
-> The same technique is used to cross all the boundaries in the architectures. We take advantage of dynamic polymorphism to create source code dependencies that oppose the flow of control so that we can conform to The Dependency Rule no matter what direction the flow of control is going in.
+
+            •---------------•
+            |    Server     |
+            •---------------•
+
+            
+            •---------------•
+            |     Route     |
+            •---------------•
+
+            
+            •---------------•
+            |  Controller   |
+            •---------------•
+
+
+•---------------•       •---------------• 
+|  Serializer   |       |  Serializer   |
+|  #serialize   |       | #deserialize  |
+•---------------•       •---------------•
+
+
+•---------------•
+|    UseCase    |
+•---------------•
+
+
+•---------------•
+|    Service    |
+•---------------•
+
+
+•---------------•
+|  DomainModel  |
+•---------------•
+```
