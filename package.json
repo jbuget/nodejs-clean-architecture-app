@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Jérémy Buget",
   "license": "MIT",
@@ -21,6 +21,10 @@
     "require-directory": "^2.1.1"
   },
   "devDependencies": {
+    "jest": "^22.0.4",
     "nodemon": "^1.14.7"
+  },
+  "jest": {
+    "collectCoverageFrom": ["**/*.{js}", "!**/node_modules/**", "!**/vendor/**", "!**/coverage/**"]
   }
 }
