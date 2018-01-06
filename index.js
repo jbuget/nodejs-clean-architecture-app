@@ -1,7 +1,7 @@
 'use strict';
 
 // Create a server with a host and port
-const createServer = require('./lib/technical/server');
+const createServer = require('./lib/infrastructure/webserver/server');
 
 // Start the server
 const start = async () => {

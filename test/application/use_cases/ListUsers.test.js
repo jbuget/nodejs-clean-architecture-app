@@ -1,10 +1,10 @@
 const Promise = require('bluebird');
 
-const UserRepository = require('../../lib/features/ports/UserRepository');
+const UserRepository = require('../../../lib/application/repositories/UserRepository');
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
-const ListUsers = require('../../lib/features/ListUsers');
+const ListUsers = require('../../../lib/application/use_cases/ListUsers');
 const useCase = new ListUsers(mockUserRepository);
 
 test('should resolves with all the users persisted in repository', () => {

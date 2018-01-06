@@ -1,10 +1,10 @@
 const Promise = require('bluebird');
 
-const UserRepository = require('../../lib/features/ports/UserRepository');
+const UserRepository = require('../../../lib/application/repositories/UserRepository');
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
-const DeleteUser = require('../../lib/features/DeleteUser');
+const DeleteUser = require('../../../lib/application/use_cases/DeleteUser');
 const useCase = new DeleteUser(mockUserRepository);
 
 test('should resolves (without result)', () => {

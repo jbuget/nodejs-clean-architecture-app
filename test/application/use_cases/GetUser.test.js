@@ -1,11 +1,11 @@
 const Promise = require('bluebird');
-const User = require('../../lib/domain/entities/User');
+const User = require('../../../lib/domain/entities/User');
 
-const UserRepository = require('../../lib/features/ports/UserRepository');
+const UserRepository = require('../../../lib/application/repositories/UserRepository');
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
-const GetUser = require('../../lib/features/GetUser');
+const GetUser = require('../../../lib/application/use_cases/GetUser');
 const useCase = new GetUser(mockUserRepository);
 
 test('should resolves with the corresponding persisted user entity', () => {

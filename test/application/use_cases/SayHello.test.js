@@ -1,4 +1,4 @@
-const SayHello = require('../../lib/features/SayHello');
+const SayHello = require('../../../lib/application/use_cases/SayHello');
 const useCase = new SayHello();
 
 test('should resolves with "Hello world!" when name is not defined (undefined or null)', () => {

@@ -1,5 +1,5 @@
 const Promise = require('bluebird');
-const SayHello = require('../../../lib/features/SayHello');
+const SayHello = require('../../../lib/application/use_cases/SayHello');
 const HelloController = require('../../../lib/interfaces/controllers/HelloController');
 
 beforeEach(() => {
