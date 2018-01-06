@@ -1,7 +1,7 @@
 const Promise = require('bluebird');
-const User = require('../../lib/domain/User');
+const User = require('../../lib/domain/entities/User');
 
-const UserRepository = require('../../lib/domain/UserRepository');
+const UserRepository = require('../../lib/features/ports/UserRepository');
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
