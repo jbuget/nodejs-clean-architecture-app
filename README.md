@@ -16,6 +16,10 @@ In a browser, open [http://localhost:3000/hello](http://localhost:3000/hello).
 
 The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)" principles and project structure :
 
+### Clean Architecture layers
+
+![Schema of flow of Clean Architecture](/doc/Uncle_Bob_Clean_Architecture.jpg)
+
 ### Project anatomy
 
 ```
@@ -41,56 +45,6 @@ app
  └ index.js                 → Main application entry point
 ```
 
-### The Dependency Rule
+### Flow of Control
 
-According to Uncle Bob: 
-
-> The concentric circles represent different areas of software. In general, the further in you go, the higher level the software becomes. The outer circles are mechanisms. The inner circles are policies.
-> 
-> The overriding rule that makes this architecture work is The Dependency Rule. This rule says that source code dependencies can only point inwards. Nothing in an inner circle can know anything at all about something in an outer circle. In particular, the name of something declared in an outer circle must not be mentioned by the code in an inner circle. That includes, functions, classes. variables, or any other named software entity.
-> 
-> By the same token, data formats used in an outer circle should not be used by an inner circle, especially if those formats are generate by a framework in an outer circle. We don’t want anything in an outer circle to impact the inner circles.
-
-### Data flow
-
-```
-•---------------•       •---------------• 
-| HTTP Request  |       | HTTP Response |
-•---------------•       •---------------•	
-
-
-            •---------------•
-            |    Server     |
-            •---------------•
-
-            
-            •---------------•
-            |     Route     |
-            •---------------•
-
-            
-            •---------------•
-            |  Controller   |
-            •---------------•
-
-
-•---------------•       •---------------• 
-|  Serializer   |       |  Serializer   |
-|  #serialize   |       | #deserialize  |
-•---------------•       •---------------•
-
-
-•---------------•
-|    UseCase    |
-•---------------•
-
-
-•---------------•
-|    Service    |
-•---------------•
-
-
-•---------------•
-|  DomainModel  |
-•---------------•
-```
+![Schema of flow of Control](/doc/Hapijs_Clean_Architecture.svg)
