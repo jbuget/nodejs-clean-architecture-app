@@ -1,7 +1,7 @@
 {
-  "name": "hapijs-v17-app",
+  "name": "nodejs-clean-architecture-app",
   "version": "1.0.0",
-  "description": "A basic Hapi.js application",
+  "description": "A simple API built with Node.js/Hapi.js that follows DDD + Clean Architecture principles",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbuget/hapijs-v17-app.git"
+    "url": "https://github.com/jbuget/nodejs-clean-architecture-app.git"
   },
   "dependencies": {
     "blipp": "^3.0.0",

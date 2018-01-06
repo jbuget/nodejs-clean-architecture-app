@@ -3,7 +3,7 @@
 ## Getting started (< 2mn)
 
 ```
-git clone git@github.com:jbuget/hapijs-v17-app.git
+git clone git@github.com:jbuget/nodejs-clean-architecture-app.git
 cd hapijs-v17-app
 npm install
 npm test
