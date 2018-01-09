@@ -15,6 +15,6 @@ test('should resolve (without result)', () => {
   const promise = useCase.execute(123);
 
   // then
-  expect(promise).resolves.toBe();
   expect(mockUserRepository.remove).toHaveBeenCalledWith(123);
+  return expect(promise).resolves.toBe();
 });

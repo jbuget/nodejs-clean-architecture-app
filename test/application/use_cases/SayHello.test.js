@@ -6,7 +6,7 @@ test('should resolve with "Hello world!" when name is not defined (undefined or 
   const promise = useCase.execute();
 
   // then
-  expect(promise).resolves.toBe('Hello world!');
+  return expect(promise).resolves.toBe('Hello world!');
 });
 
 test('should resolve with "Hello _name_!" when name is provided', () => {
@@ -17,6 +17,6 @@ test('should resolve with "Hello _name_!" when name is provided', () => {
   const promise = useCase.execute(name);
 
   // then
-  expect(promise).resolves.toBe('Hello John!');
+  return expect(promise).resolves.toBe('Hello John!');
 });
 

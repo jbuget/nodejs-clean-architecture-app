@@ -17,6 +17,6 @@ test('should resolve with the newly persisted user (augmented with an ID)', () =
   const promise = useCase.execute('John', 'Doe', 'john.doe@email.com', 'P@s$W0rD');
 
   // then
-  expect(promise).resolves.toEqual(persistedUser);
   expect(mockUserRepository.persist).toHaveBeenCalledWith(new User(null, 'John', 'Doe', 'john.doe@email.com', 'P@s$W0rD'));
+  return expect(promise).resolves.toEqual(persistedUser);
 });

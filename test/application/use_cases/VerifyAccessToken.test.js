@@ -15,7 +15,7 @@ test('should resolve with the decoded user data (ID) when OAuth JWT access token
   const promise = useCase.execute('some-jwt-access-token');
 
   // then
-  expect(promise).resolves.toEqual({ uid: 1234 });
+  return expect(promise).resolves.toEqual({ uid: 1234 });
 });
 
 test('should reject when OAuth JWT access token is invalid', () => {
@@ -26,5 +26,5 @@ test('should reject when OAuth JWT access token is invalid', () => {
   const promise = useCase.execute('a-wrong-jwt-access-token');
 
   // then
-  expect(promise).rejects.toThrow('Invalid access token');
+  return expect(promise).rejects.toThrow('Invalid access token');
 });

@@ -17,6 +17,6 @@ test('should resolve with the corresponding persisted user entity', () => {
   const promise = useCase.execute(123);
 
   // then
-  expect(promise).resolves.toEqual(correspondingUser);
   expect(mockUserRepository.get).toHaveBeenCalledWith(123);
+  return expect(promise).resolves.toEqual(correspondingUser);
 });

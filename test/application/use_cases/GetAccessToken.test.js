@@ -20,7 +20,7 @@ test('should resolve with a generated JWT access token when credentials are ok',
   const promise = useCase.execute('john@mail.com', 'abcd-1234');
 
   // then
-  expect(promise).resolves.toBe('generated-jwt-access-token');
+  return expect(promise).resolves.toBe('generated-jwt-access-token');
 });
 
 test('should reject when user was not found', () => {
@@ -31,7 +31,7 @@ test('should reject when user was not found', () => {
   const promise = useCase.execute('john@mail.com', 'abcd-1234');
 
   // then
-  expect(promise).rejects.toThrow('Bad credentials');
+  return expect(promise).rejects.toThrow('Bad credentials');
 });
 
 test('should reject when password did not match', () => {
@@ -43,5 +43,5 @@ test('should reject when password did not match', () => {
   const promise = useCase.execute('john@mail.com', 'wrong-password');
 
   // then
-  expect(promise).rejects.toThrow('Bad credentials');
+  return expect(promise).rejects.toThrow('Bad credentials');
 });

@@ -15,5 +15,5 @@ test('should resolve with all the users persisted in repository', () => {
   const promise = useCase.execute();
 
   // then
-  expect(promise).resolves.toEqual(['John', 'Jane']);
+  return expect(promise).resolves.toEqual(['John', 'Jane']);
 });
