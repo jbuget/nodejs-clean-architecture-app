@@ -7,7 +7,7 @@ const mockUserRepository = new MockUserRepository();
 const DeleteUser = require('../../../lib/application/use_cases/DeleteUser');
 const useCase = new DeleteUser(mockUserRepository);
 
-test('should resolves (without result)', () => {
+test('should resolve (without result)', () => {
   // given
   mockUserRepository.remove = jest.fn((userId) => Promise.resolve());
 

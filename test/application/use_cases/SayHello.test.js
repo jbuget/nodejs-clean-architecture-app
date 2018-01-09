@@ -1,7 +1,7 @@
 const SayHello = require('../../../lib/application/use_cases/SayHello');
 const useCase = new SayHello();
 
-test('should resolves with "Hello world!" when name is not defined (undefined or null)', () => {
+test('should resolve with "Hello world!" when name is not defined (undefined or null)', () => {
   // when
   const promise = useCase.execute();
 
@@ -9,7 +9,7 @@ test('should resolves with "Hello world!" when name is not defined (undefined or
   expect(promise).resolves.toBe('Hello world!');
 });
 
-test('should resolves with "Hello _name_!" when name is provided', () => {
+test('should resolve with "Hello _name_!" when name is provided', () => {
   // given
   const name = 'John';
 

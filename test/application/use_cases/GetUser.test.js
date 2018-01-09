@@ -8,7 +8,7 @@ const mockUserRepository = new MockUserRepository();
 const GetUser = require('../../../lib/application/use_cases/GetUser');
 const useCase = new GetUser(mockUserRepository);
 
-test('should resolves with the corresponding persisted user entity', () => {
+test('should resolve with the corresponding persisted user entity', () => {
   // given
   const correspondingUser = new User(123, 'John', 'Doe', 'john.doe@email.com', 'P@s$W0rD');
   mockUserRepository.get = jest.fn((userId) => Promise.resolve(correspondingUser));

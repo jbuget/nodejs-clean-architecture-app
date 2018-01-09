@@ -8,7 +8,7 @@ const mockUserRepository = new MockUserRepository();
 const CreateUser = require('../../../lib/application/use_cases/CreateUser');
 const useCase = new CreateUser(mockUserRepository);
 
-test('should resolves with the newly persisted user (augmented with an ID)', () => {
+test('should resolve with the newly persisted user (augmented with an ID)', () => {
   // given
   const persistedUser = new User(123, 'John', 'Doe', 'john.doe@email.com', 'P@s$W0rD');
   mockUserRepository.persist = jest.fn(() => Promise.resolve(persistedUser));
