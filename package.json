@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "blipp": "^3.0.0",
-    "bluebird": "^3.5.1",
-    "hapi": "^17.2.0",
-    "jsonwebtoken": "^8.1.0",
+    "bluebird": "^3.5.2",
+    "hapi": "^17.5.4",
+    "jsonwebtoken": "^8.3.0",
     "require-directory": "^2.1.1"
   },
   "devDependencies": {
-    "jest": "^22.0.4",
-    "nodemon": "^1.14.7"
+    "jest": "^22.4.4",
+    "nodemon": "^1.18.4"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -32,6 +32,7 @@
       "!**/node_modules/**",
       "!**/vendor/**",
       "!**/coverage/**"
-    ]
+    ],
+    "testURL": "http://localhost/"
   }
 }
