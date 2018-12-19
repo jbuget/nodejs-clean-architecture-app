@@ -61,3 +61,6 @@ typings/
 .idea
 *.iml
 
+# VSCode
+.vscode
+
