@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        "security",
+        "jest"
+    ],
+    "extends": [
+        "airbnb-base",
+        "plugin:security/recommended",
+        "plugin:jest/recommended"
+    ],
+    "rules": {
+        "jest/consistent-test-it": ["error", {"withinDescribe": "it"}],
+        "jest/expect-expect": ["error", {"assertFunctionNames": ["expect"]}],
+        "jest/no-alias-methods": "error",
+        "jest/prefer-strict-equal": "warn",
+        "jest/prefer-to-be-null": "warn",
+        "jest/prefer-to-be-undefined": "warn",
+        "jest/prefer-to-contain": "warn",
+        "jest/prefer-to-have-length": "warn",
+        "jest/prefer-to-be-null": "warn",
+        "jest/valid-expect": "error"
+    }
+}
