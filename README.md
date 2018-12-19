@@ -24,7 +24,7 @@ The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com
 
 ```
 app 
- └ lib                      → Application sources 
+ └ src                      → Application sources 
     └ application           → Application services layer
        └ repositories       → Data access objects interfaces (unfortunately, there is no Interface pattern in JavaScript)
        └ security           → Security tools interfaces (ex: AccessTokenManager.js, to generate and decode OAuth access token)
@@ -33,6 +33,7 @@ app
        └ models             → Domain model objects such as Entities, Aggregates, Value Objects, Business Events, etc.
        └ services           → Domain services, e.g. business objects that manipulate multiple and different Domain Models
     └ infrastructure        → Frameworks, drivers and tools such as Database, the Web Framework, mailing/logging/glue code etc.
+       └ config             → Environment based configurations
        └ database           → ORM and database connection objects
        └ webserver          → Hapi.js Web server configuration (server, routes, plugins, etc.)
           └ plugins         → Hapi.js custom plugins definition (ex: custom OAuth routes POST /oauth/token + OAuth scheme + JWT access token strategy)
@@ -45,6 +46,9 @@ app
        └ storage            → Repository implementations
  └ node_modules (generated) → NPM dependencies
  └ test                     → Source folder for unit or functional tests
+ └ .eslint.json             → Eslint configuration file
+ └ commitlint.config.js     → Commitlint configuration file
+ └ jest.config.js           → Jest configuration file
  └ index.js                 → Main application entry point
 ```
 
