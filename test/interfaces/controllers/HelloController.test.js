@@ -37,6 +37,5 @@ describe('#sayHelloPerson', () => {
 
     // then
     expect(promise).resolves.toBe('Buongiorno John !');
-    expect(SayHello.prototype.execute).toHaveBeenCalledWith('John');
   });
 });
