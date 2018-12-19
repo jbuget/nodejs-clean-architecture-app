@@ -1,6 +1,6 @@
 'use strict';
 
-process.env["NODE_CONFIG_DIR"] = require('path').resolve('./lib/infrastructure/config/');
+process.env["NODE_CONFIG_DIR"] = require('path').resolve('./src/infrastructure/config/');
 
 const Hapi = require('hapi');
 const config = require("config");

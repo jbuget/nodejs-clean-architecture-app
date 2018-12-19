@@ -1,6 +1,6 @@
 const Promise = require('bluebird');
-const SayHello = require('../../../lib/application/use_cases/SayHello');
-const HelloController = require('../../../lib/interfaces/controllers/HelloController');
+const SayHello = require('../../../src/application/use_cases/SayHello');
+const HelloController = require('../../../src/interfaces/controllers/HelloController');
 
 beforeEach(() => {
   SayHello.prototype.execute = jest.fn();
