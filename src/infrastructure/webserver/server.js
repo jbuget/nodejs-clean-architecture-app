@@ -1,12 +1,9 @@
-'use strict';
-
-process.env["NODE_CONFIG_DIR"] = require('path').resolve('./src/infrastructure/config/');
+process.env.NODE_CONFIG_DIR = require('path').resolve('./src/infrastructure/config/');
 
 const Hapi = require('hapi');
-const config = require("config");
+const config = require('config');
 
 const createServer = async () => {
-
   // Create a server with a host and port
   const hapiConfig = JSON.parse(JSON.stringify(config.get('webserver.hapi')));
   const server = Hapi.server(hapiConfig);
@@ -14,7 +11,7 @@ const createServer = async () => {
   // Register plugins
   await server.register([
     require('blipp'),
-    require('./plugins/oauth')
+    require('./plugins/oauth'),
   ]);
 
   // Add the routes

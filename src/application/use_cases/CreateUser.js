@@ -1,9 +1,6 @@
-'use strict';
-
 const User = require('../../domain/entities/User');
 
 module.exports = class {
-
   constructor(userRepository) {
     this.userRepository = userRepository;
   }

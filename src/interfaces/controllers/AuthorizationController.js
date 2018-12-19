@@ -1,5 +1,3 @@
-'use strict';
-
 const Boom = require('boom');
 const UserRepositoryInMemory = require('../storage/UserRepositoryInMemory');
 const JwtAccessTokenManager = require('../security/JwtAccessTokenManager');
@@ -7,16 +5,15 @@ const GetAccessToken = require('../../application/use_cases/GetAccessToken');
 const VerifyAccessToken = require('../../application/use_cases/VerifyAccessToken');
 
 module.exports = class {
-
   constructor() {
     this.userRepository = new UserRepositoryInMemory();
     this.accessTokenManager = new JwtAccessTokenManager();
   }
 
   getAccessToken(request, h) {
-    const grantType = request.payload['grant_type'];
-    const email = request.payload['username'];
-    const password = request.payload['password'];
+    const grantType = request.payload.grant_type;
+    const email = request.payload.username;
+    const password = request.payload.password;
 
     if (!grantType || grantType !== 'password') {
       return Boom.badRequest('Invalid authentication strategy');
@@ -36,11 +33,10 @@ module.exports = class {
 
     const useCase = new VerifyAccessToken(this.accessTokenManager);
     return useCase.execute(accessToken)
-      .then(({uid}) => h.authenticated({
+      .then(({ uid }) => h.authenticated({
         credentials: { uid },
-        artifacts: { accessToken: accessToken }
+        artifacts: { accessToken },
       }))
       .catch(() => Boom.unauthorized('Bad credentials'));
   }
-
 };

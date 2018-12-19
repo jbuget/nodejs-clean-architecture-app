@@ -1,7 +1,4 @@
-'use strict';
-
 module.exports = class {
-
   constructor() {}
 
   persist(userEntity) {
@@ -27,5 +24,4 @@ module.exports = class {
   find() {
     // To be overridden in concrete implementation
   }
-
 };

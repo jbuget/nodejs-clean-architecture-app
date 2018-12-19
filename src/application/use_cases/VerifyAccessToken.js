@@ -1,9 +1,6 @@
-'use strict';
-
 const Promise = require('bluebird');
 
 module.exports = class {
-
   constructor(accessTokenManager) {
     this.accessTokenManager = accessTokenManager;
   }
@@ -13,6 +10,6 @@ module.exports = class {
     if (!decoded) {
       return Promise.reject(new Error('Invalid access token'));
     }
-    return Promise.resolve({uid: decoded.uid});
+    return Promise.resolve({ uid: decoded.uid });
   }
 };

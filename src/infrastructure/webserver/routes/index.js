@@ -1,5 +1,3 @@
-'use strict';
-
 const requireDirectory = require('require-directory');
 
 const routeModules = requireDirectory(module);

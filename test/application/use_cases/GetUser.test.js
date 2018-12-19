@@ -2,16 +2,18 @@ const Promise = require('bluebird');
 const User = require('../../../src/domain/entities/User');
 
 const UserRepository = require('../../../src/application/repositories/UserRepository');
+
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
 const GetUser = require('../../../src/application/use_cases/GetUser');
+
 const useCase = new GetUser(mockUserRepository);
 
 test('should resolve with the corresponding persisted user entity', () => {
   // given
   const correspondingUser = new User(123, 'John', 'Doe', 'john.doe@email.com', 'P@s$W0rD');
-  mockUserRepository.get = jest.fn((userId) => Promise.resolve(correspondingUser));
+  mockUserRepository.get = jest.fn(userId => Promise.resolve(correspondingUser));
 
   // when
   const promise = useCase.execute(123);

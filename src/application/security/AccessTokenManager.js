@@ -1,5 +1,4 @@
 module.exports = class {
-
   generate() {
     // To be overridden in concrete implementation
   }
@@ -7,5 +6,4 @@ module.exports = class {
   decode() {
     // To be overridden in concrete implementation
   }
-
 };

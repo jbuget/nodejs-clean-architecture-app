@@ -1,11 +1,8 @@
-'use strict';
-
 const Promise = require('bluebird');
 const User = require('../../domain/entities/User');
 const UserRepository = require('../../application/repositories/UserRepository');
 
 module.exports = class extends UserRepository {
-
   _initializeRepositoryWithTwoUsers() {
     const john = new User(null, 'John', 'Doe', 'john.doe@mail.com', 'ABCD1234');
     const jane = new User(null, 'Jane', 'Smith', 'jane.smith@mail.com', 'EFGH5678');
@@ -32,7 +29,7 @@ module.exports = class extends UserRepository {
   }
 
   merge(userEntity) {
-    let row = this.data[userEntity.id];
+    const row = this.data[userEntity.id];
     Object.assign(row, userEntity);
     return Promise.resolve(row);
   }
@@ -54,5 +51,4 @@ module.exports = class extends UserRepository {
   find() {
     return Promise.resolve(this._dataAsArray());
   }
-
 };
