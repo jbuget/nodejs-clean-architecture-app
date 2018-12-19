@@ -7,7 +7,8 @@
     "dev": "nodemon",
     "start": "node index.js",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "author": "Jérémy Buget",
   "license": "MIT",
@@ -26,14 +27,5 @@
   "devDependencies": {
     "jest": "^22.4.4",
     "nodemon": "^1.18.4"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "**/*.{js}",
-      "!**/node_modules/**",
-      "!**/vendor/**",
-      "!**/coverage/**"
-    ],
-    "testURL": "http://localhost/"
   }
 }
