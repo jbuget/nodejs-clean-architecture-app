@@ -7,7 +7,9 @@
     "dev": "nodemon",
     "start": "node index.js",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:lint": "eslint src test"
   },
   "author": "Jérémy Buget",
   "license": "MIT",
@@ -18,21 +20,28 @@
   "dependencies": {
     "blipp": "^3.0.0",
     "bluebird": "^3.5.2",
+    "config": "^3.0.1",
     "hapi": "^17.5.4",
     "jsonwebtoken": "^8.3.0",
     "require-directory": "^2.1.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^1.3.0",
     "jest": "^22.4.4",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "pre-commit": "^1.2.2"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "**/*.{js}",
-      "!**/node_modules/**",
-      "!**/vendor/**",
-      "!**/coverage/**"
-    ],
-    "testURL": "http://localhost/"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run test:coverage"
+    }
   }
 }

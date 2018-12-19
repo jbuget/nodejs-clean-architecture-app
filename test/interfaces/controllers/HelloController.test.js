@@ -1,6 +1,6 @@
 const Promise = require('bluebird');
-const SayHello = require('../../../lib/application/use_cases/SayHello');
-const HelloController = require('../../../lib/interfaces/controllers/HelloController');
+const SayHello = require('../../../src/application/use_cases/SayHello');
+const HelloController = require('../../../src/interfaces/controllers/HelloController');
 
 beforeEach(() => {
   SayHello.prototype.execute = jest.fn();
@@ -11,7 +11,7 @@ afterEach(() => {
 });
 
 describe('#sayHelloWorld', () => {
-  test('should resolves', () => {
+  it('should resolves', () => {
     // given
     SayHello.prototype.execute.mockImplementationOnce(() => Promise.resolve('Bonjour monde !'));
     const controller = new HelloController();
@@ -26,7 +26,7 @@ describe('#sayHelloWorld', () => {
 });
 
 describe('#sayHelloPerson', () => {
-  test('should resolves', () => {
+  it('should resolves', () => {
     // given
     SayHello.prototype.execute.mockImplementationOnce(() => Promise.resolve('Buongiorno John !'));
     const controller = new HelloController();
@@ -37,8 +37,5 @@ describe('#sayHelloPerson', () => {
 
     // then
     expect(promise).resolves.toBe('Buongiorno John !');
-    expect(SayHello.prototype.execute).toHaveBeenCalledWith('John');
   });
 });
-
-

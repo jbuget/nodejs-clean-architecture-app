@@ -1,11 +1,13 @@
 const Promise = require('bluebird');
-const User = require('../../../lib/domain/entities/User');
+const User = require('../../../src/domain/entities/User');
 
-const UserRepository = require('../../../lib/application/repositories/UserRepository');
+const UserRepository = require('../../../src/application/repositories/UserRepository');
+
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
-const CreateUser = require('../../../lib/application/use_cases/CreateUser');
+const CreateUser = require('../../../src/application/use_cases/CreateUser');
+
 const useCase = new CreateUser(mockUserRepository);
 
 test('should resolve with the newly persisted user (augmented with an ID)', () => {
