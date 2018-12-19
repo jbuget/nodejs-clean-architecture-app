@@ -18,6 +18,7 @@
   "dependencies": {
     "blipp": "^3.0.0",
     "bluebird": "^3.5.2",
+    "config": "^3.0.1",
     "hapi": "^17.5.4",
     "jsonwebtoken": "^8.3.0",
     "require-directory": "^2.1.1"
