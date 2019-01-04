@@ -2,16 +2,15 @@ const requireDirectory = require('require-directory');
 
 const routeModules = requireDirectory(module);
 
-const routes = Object.keys(routeModules).reduce((routes, moduleName) => {
-  const module = routeModules[moduleName];
-  if (module) {
-    if (Array.isArray(module)) {
-      routes = routes.concat(module);
-    } else {
-      routes.push(module);
+module.exports = Object.keys(routeModules).reduce((routes, routeName) => {
+  const modules = routeModules[routeName];
+  if (modules) {
+    if (Array.isArray(modules)) {
+      return routes.concat(modules);
     }
+
+    return routes.push(modules);
   }
+
   return routes;
 }, []);
-
-module.exports = routes;

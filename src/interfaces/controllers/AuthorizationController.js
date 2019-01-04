@@ -11,9 +11,11 @@ module.exports = class {
   }
 
   getAccessToken(request, h) {
-    const grantType = request.payload.grant_type;
-    const email = request.payload.username;
-    const password = request.payload.password;
+    const {
+      grantType,
+      email,
+      password,
+    } = request.payload;
 
     if (!grantType || grantType !== 'password') {
       return Boom.badRequest('Invalid authentication strategy');

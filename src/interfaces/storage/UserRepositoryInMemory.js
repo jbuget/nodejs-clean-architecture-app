@@ -22,7 +22,8 @@ module.exports = class extends UserRepository {
 
   persist(userEntity) {
     const row = Object.assign({}, userEntity);
-    const rowId = this.index++;
+    this.index += 1;
+    const rowId = this.index;
     row.id = rowId;
     this.data[rowId] = row;
     return Promise.resolve(row);

@@ -18,6 +18,8 @@
         "jest/prefer-to-contain": "warn",
         "jest/prefer-to-have-length": "warn",
         "jest/prefer-to-be-null": "warn",
-        "jest/valid-expect": "error"
+        "jest/valid-expect": "error",
+        "class-methods-use-this": "off",
+        "no-underscore-dangle": "off"
     }
 }
