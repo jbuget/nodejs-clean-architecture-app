@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-clean-architecture-app",
+  "name": "hapi-clean-architecture",
   "version": "1.0.0",
   "description": "A simple API built with Node.js/Hapi.js that follows DDD + Clean Architecture principles",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbuget/nodejs-clean-architecture-app.git"
+    "url": "https://github.com/angaziz/hapi-clean-architecture.git"
   },
   "dependencies": {
     "blipp": "^3.0.0",
