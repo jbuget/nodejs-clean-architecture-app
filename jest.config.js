@@ -1,8 +1,13 @@
 module.exports = {
   testURL: 'http://localhost/',
   verbose: true,
+  coverageReporters: [
+    'lcov',
+    'text',
+    'text-summary'
+  ],
   collectCoverageFrom: [
-    '**/*.{js}',
+    'src/{application,interfaces}/**/*.{js}',
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/coverage/**'
