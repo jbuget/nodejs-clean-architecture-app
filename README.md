@@ -4,7 +4,7 @@
 
 ```
 git clone git@github.com:jbuget/nodejs-clean-architecture-app.git
-cd hapijs-v17-app
+cd nodejs-clean-architecture-app
 npm install
 npm test
 npm start
@@ -35,8 +35,6 @@ app
     └ infrastructure        → Frameworks, drivers and tools such as Database, the Web Framework, mailing/logging/glue code etc.
        └ database           → ORM and database connection objects
        └ webserver          → Hapi.js Web server configuration (server, routes, plugins, etc.)
-          └ plugins         → Hapi.js custom plugins definition (ex: custom OAuth routes POST /oauth/token + OAuth scheme + JWT access token strategy)
-          └ routes          → Hapi.js routes declaration (route handlers are in inner layer "interfaces/controllers")
           └ server.js       → Hapi.js server definition
     └ interfaces            → Adapters and formatters for use cases and entities to external agency such as Database or the Web
        └ controllers        → Hapi.js route handlers
@@ -58,7 +56,7 @@ Server, routes and plugins can be considered as "plumbery-code" that exposes the
 
 The role of the server is to intercept the HTTP request and match the corresponding route.
 
-Routes are configuration objects whose responsibilities are to check the request format and params, and then to call the good controller (with the received request).
+Routes are configuration objects whose responsibilities are to check the request format and params, and then to call the good controller (with the received request). They are registered as Plugins.
 
 Plugins are configuration object that package an assembly of features (ex: authentication & security concerns, routes, pre-handlers, etc.) and are registered at the server startup.    
 
