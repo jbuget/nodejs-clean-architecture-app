@@ -16,14 +16,14 @@
     "url": "https://github.com/jbuget/nodejs-clean-architecture-app.git"
   },
   "dependencies": {
+    "@hapi/boom": "^7.4.2",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.0",
+    "@hapi/vision": "^5.5.2",
     "blipp": "^4.0.0",
-    "boom": "^7.3.0",
-    "hapi": "^18.1.0",
     "hapi-swagger": "^9.4.2",
-    "inert": "^5.1.3",
     "jsonwebtoken": "^8.3.0",
-    "require-directory": "^2.1.1",
-    "vision": "^5.4.4"
+    "require-directory": "^2.1.1"
   },
   "devDependencies": {
     "jest": "^24.8.0",
