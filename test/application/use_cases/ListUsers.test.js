@@ -1,7 +1,5 @@
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
-const MockUserRepository = class extends UserRepository {};
-const mockUserRepository = new MockUserRepository();
-
+const mockUserRepository = new UserRepository();
 const ListUsers = require('../../../lib/application/use_cases/ListUsers');
 
 test('should resolve with all the users persisted in repository', async () => {

@@ -1,7 +1,6 @@
 const User = require('../../../lib/domain/entities/User');
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
-const MockUserRepository = class extends UserRepository {};
-const mockUserRepository = new MockUserRepository();
+const mockUserRepository = new UserRepository();
 const CreateUser = require('../../../lib/application/use_cases/CreateUser');
 
 test('should resolve with the newly persisted user (augmented with an ID)', async () => {

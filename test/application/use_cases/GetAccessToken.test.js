@@ -1,6 +1,5 @@
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
-const MockUserRepository = class extends UserRepository {};
-const mockUserRepository = new MockUserRepository();
+const mockUserRepository = new UserRepository();
 
 const AccessTokenManager = require('../../../lib/application/security/AccessTokenManager');
 const MockAccessTokenManager = class extends AccessTokenManager {};

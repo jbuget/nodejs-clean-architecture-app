@@ -1,7 +1,6 @@
 const User = require('../../../lib/domain/entities/User');
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
-const MockUserRepository = class extends UserRepository {};
-const mockUserRepository = new MockUserRepository();
+const mockUserRepository = new UserRepository();
 const GetUser = require('../../../lib/application/use_cases/GetUser');
 
 test('should resolve with the corresponding persisted user entity', async () => {

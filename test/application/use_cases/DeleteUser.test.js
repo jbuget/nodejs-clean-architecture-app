@@ -1,6 +1,5 @@
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
-const MockUserRepository = class extends UserRepository {};
-const mockUserRepository = new MockUserRepository();
+const mockUserRepository = new UserRepository();
 const DeleteUser = require('../../../lib/application/use_cases/DeleteUser');
 
 test('should resolve (without result)', async () => {
