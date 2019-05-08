@@ -16,7 +16,7 @@
     "url": "https://github.com/jbuget/nodejs-clean-architecture-app.git"
   },
   "dependencies": {
-    "blipp": "^3.0.0",
+    "blipp": "^4.0.0",
     "bluebird": "^3.5.2",
     "boom": "^7.3.0",
     "hapi": "^18.1.0",
