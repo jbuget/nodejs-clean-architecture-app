@@ -1,5 +1,3 @@
-const Promise = require('bluebird');
-
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();

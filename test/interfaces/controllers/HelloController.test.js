@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const SayHello = require('../../../lib/application/use_cases/SayHello');
 const HelloController = require('../../../lib/interfaces/controllers/HelloController');
 
@@ -11,13 +10,13 @@ afterEach(() => {
 });
 
 describe('#sayHelloWorld', () => {
+
   test('should resolves', () => {
     // given
     SayHello.prototype.execute.mockImplementationOnce(() => Promise.resolve('Bonjour monde !'));
-    const controller = new HelloController();
 
     // when
-    const promise = controller.sayHelloWorld();
+    const promise = HelloController.sayHelloWorld();
 
     // then
     expect(promise).resolves.toBe('Bonjour monde !');
@@ -26,14 +25,14 @@ describe('#sayHelloWorld', () => {
 });
 
 describe('#sayHelloPerson', () => {
+
   test('should resolves', () => {
     // given
     SayHello.prototype.execute.mockImplementationOnce(() => Promise.resolve('Buongiorno John !'));
-    const controller = new HelloController();
     const request = { params: { name: 'John' } };
 
     // when
-    const promise = controller.sayHelloPerson(request);
+    const promise = HelloController.sayHelloPerson(request);
 
     // then
     expect(promise).resolves.toBe('Buongiorno John !');

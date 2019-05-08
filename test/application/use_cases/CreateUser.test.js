@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const User = require('../../../lib/domain/entities/User');
 
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
