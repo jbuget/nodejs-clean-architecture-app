@@ -27,6 +27,10 @@
     "jest": "^22.4.4",
     "nodemon": "^1.18.4"
   },
+  "engines": {
+    "node": ">=10.15",
+    "npm": ">=6.4"
+  },
   "jest": {
     "collectCoverageFrom": [
       "**/*.{js}",
