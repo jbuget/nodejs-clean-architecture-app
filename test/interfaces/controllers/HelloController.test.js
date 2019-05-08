@@ -1,42 +1,34 @@
 const SayHello = require('../../../lib/application/use_cases/SayHello');
 const HelloController = require('../../../lib/interfaces/controllers/HelloController');
 
-beforeEach(() => {
-  SayHello.prototype.execute = jest.fn();
-});
-
-afterEach(() => {
-  SayHello.prototype.execute.mockReset();
-});
+jest.mock('../../../lib/application/use_cases/SayHello');
 
 describe('#sayHelloWorld', () => {
 
-  test('should resolves', () => {
+  test('should resolves', async () => {
     // given
-    SayHello.prototype.execute.mockImplementationOnce(() => Promise.resolve('Bonjour monde !'));
+    SayHello.mockImplementationOnce(() => 'Bonjour monde !');
 
     // when
-    const promise = HelloController.sayHelloWorld();
+    const response = await HelloController.sayHelloWorld();
 
     // then
-    expect(promise).resolves.toBe('Bonjour monde !');
-    expect(SayHello.prototype.execute).toHaveBeenCalled();
+    expect(response).toBe('Bonjour monde !');
   });
 });
 
 describe('#sayHelloPerson', () => {
 
-  test('should resolves', () => {
+  test('should resolves', async () => {
     // given
-    SayHello.prototype.execute.mockImplementationOnce(() => Promise.resolve('Buongiorno John !'));
+    SayHello.mockImplementationOnce(() => 'Buongiorno John !');
     const request = { params: { name: 'John' } };
 
     // when
-    const promise = HelloController.sayHelloPerson(request);
+    const response = await HelloController.sayHelloPerson(request);
 
     // then
-    expect(promise).resolves.toBe('Buongiorno John !');
-    expect(SayHello.prototype.execute).toHaveBeenCalledWith('John');
+    expect(response).toBe('Buongiorno John !');
   });
 });
 

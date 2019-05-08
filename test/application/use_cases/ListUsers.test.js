@@ -3,15 +3,14 @@ const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
 const ListUsers = require('../../../lib/application/use_cases/ListUsers');
-const useCase = new ListUsers(mockUserRepository);
 
-test('should resolve with all the users persisted in repository', () => {
+test('should resolve with all the users persisted in repository', async () => {
   // given
-  mockUserRepository.find = () => Promise.resolve(['John', 'Jane']);
+  mockUserRepository.find = () => ['John', 'Jane'];
 
   // when
-  const promise = useCase.execute();
+  const users = await ListUsers({ userRepository: mockUserRepository });
 
   // then
-  return expect(promise).resolves.toEqual(['John', 'Jane']);
+  expect(users).toEqual(['John', 'Jane']);
 });

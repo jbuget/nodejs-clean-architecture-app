@@ -1,18 +1,15 @@
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
 const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
-
 const DeleteUser = require('../../../lib/application/use_cases/DeleteUser');
-const useCase = new DeleteUser(mockUserRepository);
 
-test('should resolve (without result)', () => {
+test('should resolve (without result)', async () => {
   // given
-  mockUserRepository.remove = jest.fn((userId) => Promise.resolve());
+  mockUserRepository.remove = jest.fn(() => true);
 
   // when
-  const promise = useCase.execute(123);
+  await DeleteUser(123, { userRepository: mockUserRepository });
 
   // then
   expect(mockUserRepository.remove).toHaveBeenCalledWith(123);
-  return expect(promise).resolves.toBe();
 });

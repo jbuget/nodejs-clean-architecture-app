@@ -3,30 +3,35 @@ const MockUserRepository = class extends UserRepository {};
 const mockUserRepository = new MockUserRepository();
 
 const AccessTokenManager = require('../../../lib/application/security/AccessTokenManager');
-const MockAccessTokenManager = class extends AccessTokenManager{};
+const MockAccessTokenManager = class extends AccessTokenManager {};
 const mockAccessTokenManager = new MockAccessTokenManager();
 
 const GetAccessToken = require('../../../lib/application/use_cases/GetAccessToken');
-const useCase = new GetAccessToken(mockUserRepository, mockAccessTokenManager);
 
-test('should resolve with a generated JWT access token when credentials are ok', () => {
+test('should resolve with a generated JWT access token when credentials are ok', async () => {
   // given
-  mockUserRepository.getByEmail = () => Promise.resolve({ password: 'abcd-1234'});
+  mockUserRepository.getByEmail = () => { return { password: 'abcd-1234' } };
   mockAccessTokenManager.generate = () => 'generated-jwt-access-token';
 
   // when
-  const promise = useCase.execute('john@mail.com', 'abcd-1234');
+  const accessToken = await GetAccessToken('john@mail.com', 'abcd-1234', {
+    userRepository: mockUserRepository,
+    accessTokenManager: mockAccessTokenManager
+  });
 
   // then
-  return expect(promise).resolves.toBe('generated-jwt-access-token');
+  expect(accessToken).toBe('generated-jwt-access-token');
 });
 
 test('should reject when user was not found', () => {
   // given
-  mockUserRepository.getByEmail = () => Promise.resolve(null);
+  mockUserRepository.getByEmail = () => null;
 
   // when
-  const promise = useCase.execute('john@mail.com', 'abcd-1234');
+  const promise = GetAccessToken('john@mail.com', 'abcd-1234', {
+    userRepository: mockUserRepository,
+    accessTokenManager: mockAccessTokenManager
+  });
 
   // then
   return expect(promise).rejects.toThrow('Bad credentials');
@@ -34,11 +39,13 @@ test('should reject when user was not found', () => {
 
 test('should reject when password did not match', () => {
   // given
-
-  mockUserRepository.getByEmail = () => Promise.resolve({ password: 'abcd-1234'});
+  mockUserRepository.getByEmail = () => { return { password: 'abcd-1234' } };
 
   // when
-  const promise = useCase.execute('john@mail.com', 'wrong-password');
+  const promise = GetAccessToken('john@mail.com', 'wrong-password', {
+    userRepository: mockUserRepository,
+    accessTokenManager: mockAccessTokenManager
+  });
 
   // then
   return expect(promise).rejects.toThrow('Bad credentials');
