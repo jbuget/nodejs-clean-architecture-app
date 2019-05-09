@@ -26,11 +26,13 @@
     "blipp": "^4.0.0",
     "hapi-swagger": "^9.4.2",
     "jsonwebtoken": "^8.3.0",
-    "require-directory": "^2.1.1"
+    "require-directory": "^2.1.1",
+    "sequelize": "^5.8.5"
   },
   "devDependencies": {
     "jest": "^24.8.0",
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "sqlite3": "^4.0.7"
   },
   "engines": {
     "node": ">=10.15",
