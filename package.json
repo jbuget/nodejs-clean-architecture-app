@@ -35,8 +35,8 @@
     "sqlite3": "^4.0.7"
   },
   "engines": {
-    "node": ">=10.15",
-    "npm": ">=6.4"
+    "node": ">=12",
+    "npm": ">=6.12"
   },
   "jest": {
     "collectCoverageFrom": [
