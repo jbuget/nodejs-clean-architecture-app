@@ -32,7 +32,7 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
-    "sqlite3": "^4.0.7"
+    "sqlite3": "^4.1.0"
   },
   "engines": {
     "node": ">=12",
