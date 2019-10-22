@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@hapi/boom": "^8.0.1",
-    "@hapi/good": "^8.2.0",
-    "@hapi/good-console": "^8.1.0",
-    "@hapi/good-squeeze": "^5.2.0",
+    "@hapi/good": "^8.2.4",
+    "@hapi/good-console": "^8.1.2",
+    "@hapi/good-squeeze": "^5.2.1",
     "@hapi/hapi": "^18.4.0",
     "@hapi/inert": "^5.2.0",
     "@hapi/vision": "^5.5.2",
