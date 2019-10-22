@@ -16,15 +16,6 @@ const createServer = async () => {
     require('@hapi/inert'),
     require('@hapi/vision'),
     {
-      plugin: require('hapi-swagger'),
-      options: {
-        info: {
-          title: 'Test API Documentation',
-          version: Package.version,
-        },
-      }
-    },
-    {
       plugin: require('@hapi/good'),
       options: {
         ops: {

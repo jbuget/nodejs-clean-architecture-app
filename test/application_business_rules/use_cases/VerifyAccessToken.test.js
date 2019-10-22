@@ -1,6 +1,6 @@
-const AccessTokenManager = require('../../../lib/application_business_rules/security/AccessTokenManager');
+const AccessTokenManager = require('../../../src/application_business_rules/security/AccessTokenManager');
 const mockAccessTokenManager = new AccessTokenManager();
-const VerifyAccessToken = require('../../../lib/application_business_rules/use_cases/VerifyAccessToken');
+const VerifyAccessToken = require('../../../src/application_business_rules/use_cases/VerifyAccessToken');
 
 test('should resolve with the decoded user data (ID) when OAuth JWT access token is valid', async () => {
   // given

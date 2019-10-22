@@ -1,6 +1,6 @@
-const UserRepository = require('../../../lib/application_business_rules/repositories/UserRepository');
+const UserRepository = require('../../../src/application_business_rules/repositories/UserRepository');
 const mockUserRepository = new UserRepository();
-const ListUsers = require('../../../lib/application_business_rules/use_cases/ListUsers');
+const ListUsers = require('../../../src/application_business_rules/use_cases/ListUsers');
 
 test('should resolve with all the users persisted in repository', async () => {
   // given

@@ -1,0 +1,1 @@
+{"version":3,"file":"scheme.js","sourceRoot":"","sources":["../../../../src/frameworks_drivers/webserver/oauth/scheme.js"],"names":[],"mappings":"AAAA,YAAY,CAAC;AAEb,MAAM,uBAAuB,GAAG,OAAO,CAAC,iEAAiE,CAAC,CAAC;AAE3G,MAAM,CAAC,OAAO,GAAG,GAAG,EAAE;IACpB,OAAO;QACL,YAAY,EAAE,uBAAuB,CAAC,iBAAiB;KACxD,CAAC;AACJ,CAAC,CAAC"}

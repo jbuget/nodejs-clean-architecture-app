@@ -1,8 +1,8 @@
 'use strict';
 
 // Create a server with a host and port
-const sequelize = require('./lib/frameworks_drivers/database/sequelize');
-const createServer = require('./lib/frameworks_drivers/webserver/server');
+const sequelize = require('./frameworks_drivers/database/sequelize');
+const createServer = require('./frameworks_drivers/webserver/server');
 
 // Start the server
 const start = async () => {

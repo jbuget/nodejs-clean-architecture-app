@@ -1,7 +1,7 @@
-const User = require('../../../lib/enterprise_business_rules/entities/User');
-const UserRepository = require('../../../lib/application_business_rules/repositories/UserRepository');
+const User = require('../../../src/enterprise_business_rules/entities/User');
+const UserRepository = require('../../../src/application_business_rules/repositories/UserRepository');
 const mockUserRepository = new UserRepository();
-const CreateUser = require('../../../lib/application_business_rules/use_cases/CreateUser');
+const CreateUser = require('../../../src/application_business_rules/use_cases/CreateUser');
 
 test('should resolve with the newly persisted user (augmented with an ID)', async () => {
   // given

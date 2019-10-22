@@ -1,11 +1,11 @@
-const UserRepository = require('../../../lib/application_business_rules/repositories/UserRepository');
+const UserRepository = require('../../../src/application_business_rules/repositories/UserRepository');
 const mockUserRepository = new UserRepository();
 
-const AccessTokenManager = require('../../../lib/application_business_rules/security/AccessTokenManager');
+const AccessTokenManager = require('../../../src/application_business_rules/security/AccessTokenManager');
 const MockAccessTokenManager = class extends AccessTokenManager {};
 const mockAccessTokenManager = new MockAccessTokenManager();
 
-const GetAccessToken = require('../../../lib/application_business_rules/use_cases/GetAccessToken');
+const GetAccessToken = require('../../../src/application_business_rules/use_cases/GetAccessToken');
 
 test('should resolve with a generated JWT access token when credentials are ok', async () => {
   // given
