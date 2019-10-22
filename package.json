@@ -21,7 +21,7 @@
     "@hapi/good-console": "^8.1.2",
     "@hapi/good-squeeze": "^5.2.1",
     "@hapi/hapi": "^18.4.0",
-    "@hapi/inert": "^5.2.0",
+    "@hapi/inert": "^5.2.2",
     "@hapi/vision": "^5.5.2",
     "blipp": "^4.0.0",
     "hapi-swagger": "^9.4.2",
