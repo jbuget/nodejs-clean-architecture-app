@@ -27,7 +27,7 @@
     "hapi-swagger": "^10.2.0",
     "jsonwebtoken": "^8.5.1",
     "require-directory": "^2.1.1",
-    "sequelize": "^5.8.5"
+    "sequelize": "^5.21.1"
   },
   "devDependencies": {
     "jest": "^24.8.0",
