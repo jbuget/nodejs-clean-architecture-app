@@ -25,7 +25,7 @@
     "@hapi/vision": "^5.5.4",
     "blipp": "^4.0.1",
     "hapi-swagger": "^10.2.0",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^8.5.1",
     "require-directory": "^2.1.1",
     "sequelize": "^5.8.5"
   },
