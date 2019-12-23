@@ -12,7 +12,7 @@ npm start
 
 ## DDD and Clean Architecture
 
-The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)" principles and project structure. The structure of this project is forked from [jbuget's Hapi.js API following Clean Architecture principles](https://github.com/jbuget/nodejs-clean-architecture-app). Please consult that repo for more information about writing clean architecture in Node.js.
+The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)" principles and project structure. The structure of this project is forked from [jbuget's Hapi.js API following Clean Architecture principles](https://github.com/jbuget/nodejs-clean-architecture-app). Please consult that repo for more information about creating "Clean Architecture" microservices in Node.js.
 
 ### Clean Architecture layers
 
