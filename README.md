@@ -46,5 +46,5 @@ app
 
 ### Flow of Control
 
-![Schema of flow of Control](/doc/Hapijs_Clean_Architecture.svg)
+![Schema of flow of Control](/doc/arxiv-explorer-flow-of-control.png)
 
