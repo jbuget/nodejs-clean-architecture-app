@@ -1,9 +1,9 @@
-# ArXiv Explorer Search Query Resolver
+# ArXiv Explorer Web Service
 
 ## Getting started
 
 ```
-git clone git@github.com:kkacquah/search-query-resolver.git
+git clone git@github.com:kkacquah/arxiv-explorer-web-service.git
 cd search-query-resolver
 npm install
 npm test
