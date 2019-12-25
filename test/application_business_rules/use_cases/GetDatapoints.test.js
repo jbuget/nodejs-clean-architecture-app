@@ -5,11 +5,15 @@ const getDatapoints = require('../../../lib/application_business_rules/use_cases
 
 test('Should resolve query to get a datapoints object with history mapping to query request', async () => {
   // given
-  expectedDatapoints = {
+  const expectedDatapoints = {
 
   }
   const query = {
-
+    phrases: ["Neural Networks", "Bayesian Networks","Markov Methods", "Evolutionary Algorithms", "Support Vector Machine"],
+    interval: {
+      start: 682128000,
+      end: 1577222874
+    }
   }
   // when
   const datapoints = await getDatapoints(query, { userRepository: mockDatapointsRepository });
