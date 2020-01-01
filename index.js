@@ -1,7 +1,7 @@
 'use strict';
 
 // Create a server with a host and port
-const sequelize = require('./lib/frameworks_drivers/database/sequelize');
+const qrDriver = require('./lib/frameworks_drivers/queryResolver/qrDriver');
 const createServer = require('./lib/frameworks_drivers/webserver/server');
 
 // Start the server
@@ -9,7 +9,7 @@ const start = async () => {
 
   try {
 
-    await sequelize.sync();
+    //await qrDriver.sync();
     console.log('Connection to DB has been established successfully.');
 
   } catch (err) {
