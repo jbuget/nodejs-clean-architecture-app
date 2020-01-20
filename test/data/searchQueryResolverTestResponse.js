@@ -643,7 +643,7 @@ module.exports = {
       "t": 1554845502
     }
   ],
-  "Support Vector Machine": [{
+  "Support Vector Machines": [{
       "y": 30,
       "t": 682128000
     },
