@@ -30,6 +30,7 @@
     "hapi-swagger": "^10.3.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.3"
   },
