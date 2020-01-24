@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbuget/nodejs-clean-architecture-app.git"
+    "url": "git+https://github.com/jbuget/nodejs-clean-architecture-app.git"
   },
   "dependencies": {
     "@hapi/boom": "^8.0.1",
@@ -51,5 +51,18 @@
       "!**/coverage/**"
     ],
     "testURL": "http://localhost/"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jbuget/nodejs-clean-architecture-app/issues"
+  },
+  "homepage": "https://github.com/jbuget/nodejs-clean-architecture-app#readme",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "heroku",
+    "test"
+  ]
 }
