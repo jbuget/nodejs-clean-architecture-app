@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node index.js",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "coverage": "jest --coverage"
   },
   "author": "Jérémy Buget",
