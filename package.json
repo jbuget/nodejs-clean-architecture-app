@@ -21,10 +21,10 @@
     "@hapi/good-console": "^9.0.0",
     "@hapi/good-squeeze": "^6.0.0",
     "@hapi/hapi": "^19.1.1",
-    "@hapi/inert": "^5.2.2",
+    "@hapi/inert": "^6.0.1",
     "@hapi/vision": "^6.0.0",
     "blipp": "^4.0.1",
-    "hapi-swagger": "^10.2.0",
+    "hapi-swagger": "^13.0.2",
     "jsonwebtoken": "^8.5.1",
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.1"
