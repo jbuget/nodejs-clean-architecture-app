@@ -18,7 +18,7 @@
   "dependencies": {
     "@hapi/boom": "^9.1.0",
     "@hapi/good": "^9.0.0",
-    "@hapi/good-console": "^8.1.2",
+    "@hapi/good-console": "^9.0.0",
     "@hapi/good-squeeze": "^5.2.1",
     "@hapi/hapi": "^19.1.1",
     "@hapi/inert": "^5.2.2",
