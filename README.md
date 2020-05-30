@@ -37,18 +37,18 @@ The application follows the Uncle Bob "[Clean Architecture](https://8thlight.com
 ```
 app 
  └ lib                              → Application sources 
-    └ application_business_rules    → Application services layer
+    └ application                   → Application services layer
        └ repositories               → Data access objects interfaces (unfortunately, there is no Interface pattern in JavaScript)
        └ security                   → Security tools interfaces (ex: AccessTokenManager.js, to generate and decode OAuth access token)
        └ use_cases                  → Application business rules 
-    └ enterprise_business_rules     → Enterprise core business layer
+    └ domain                        → Enterprise core business layer
        └ models                     → Domain model objects such as Entities, Aggregates, Value Objects, Business Events, etc.
        └ services                   → Domain services, e.g. business objects that manipulate multiple and different Domain Models
-    └ frameworks_drivers            → Frameworks, drivers and tools such as Database, the Web Framework, mailing/logging/glue code etc.
+    └ infrastructure                → Frameworks, drivers and tools such as Database, the Web Framework, mailing/logging/glue code etc.
        └ database                   → ORM and database connection objects
        └ webserver                  → Hapi.js Web server configuration (server, routes, plugins, etc.)
           └ server.js               → Hapi.js server definition
-    └ interface_adapters            → Adapters and formatters for use cases and entities to external agency such as Database or the Web
+    └ interfaces                    → Adapters and formatters for use cases and entities to external agency such as Database or the Web
        └ controllers                → Hapi.js route handlers
        └ security                   → Security tools implementations (ex: JwtAccessTokenManager)
        └ serializers                → Converter objects that transform outside objects (ex: HTTP request payload) to inside objects (ex: Use Case request object)
