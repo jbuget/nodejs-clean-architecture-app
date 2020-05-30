@@ -16,7 +16,7 @@
     "url": "https://github.com/jbuget/nodejs-clean-architecture-app.git"
   },
   "dependencies": {
-    "@hapi/boom": "^8.0.1",
+    "@hapi/boom": "^9.1.0",
     "@hapi/good": "^8.2.4",
     "@hapi/good-console": "^8.1.2",
     "@hapi/good-squeeze": "^5.2.1",
