@@ -1,4 +1,4 @@
-const User = require('../../../lib/domain/entities/User');
+const User = require('../../../lib/domain/User');
 const UserRepository = require('../../../lib/application/repositories/UserRepository');
 const mockUserRepository = new UserRepository();
 const GetUser = require('../../../lib/application/use_cases/GetUser');
