@@ -20,7 +20,7 @@
     "@hapi/good": "^8.2.4",
     "@hapi/good-console": "^8.1.2",
     "@hapi/good-squeeze": "^5.2.1",
-    "@hapi/hapi": "^18.4.0",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/inert": "^5.2.2",
     "@hapi/vision": "^5.5.4",
     "blipp": "^4.0.1",
