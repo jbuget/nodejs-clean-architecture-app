@@ -16,7 +16,7 @@ In a browser, open [http://localhost:3000/hello](http://localhost:3000/hello).
 
 Software design is a very hard thing. From years, a trend has appeared to put the business logic, a.k.a. the (Business) Domain, and with it the User, in the heart of the overall system. Based on this concept, different architectural patterns was imaginated. 
 
-One of the first and main ones was introduced by E. Evans in its Domain Driven Design approach.
+One of the first and main ones was introduced by E. Evans in its [Domain Driven Design approach](http://dddsample.sourceforge.net/architecture.html).
 
 ![DDD Architecture](/doc/DDD_architecture.jpg)
 
