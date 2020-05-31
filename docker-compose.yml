@@ -2,5 +2,13 @@ version: '3'
 
 services:
 
-  db:
+  postgres:
     image: postgres
+    restart: always
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
