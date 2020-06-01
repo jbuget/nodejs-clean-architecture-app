@@ -1,5 +1,5 @@
 const User = require('../../../lib/domain/User');
-const UserRepository = require('../../../lib/application/repositories/UserRepository');
+const UserRepository = require('../../../lib/domain/UserRepository');
 const mockUserRepository = new UserRepository();
 const GetUser = require('../../../lib/application/use_cases/GetUser');
 

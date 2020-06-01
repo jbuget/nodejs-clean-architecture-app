@@ -26,6 +26,7 @@
     "blipp": "^4.0.1",
     "hapi-swagger": "^13.0.2",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.16",
     "request": "^2.88.2",
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.11"
