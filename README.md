@@ -12,7 +12,7 @@ npm start
 
 In a browser, open [http://localhost:3000/hello](http://localhost:3000/hello).
 
-## Domain Centric Architectures
+## Domain Driven Architectures
 
 Software design is a very hard thing. From years, a trend has appeared to put the business logic, a.k.a. the (Business) Domain, and with it the User, in the heart of the overall system. Based on this concept, different architectural patterns was imaginated. 
 
