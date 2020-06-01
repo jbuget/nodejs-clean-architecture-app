@@ -1,7 +1,7 @@
 'use strict';
 
 // Create a server with a host and port
-const sequelize = require('./lib/infrastructure/database/sequelize/sequelize');
+const sequelize = require('./lib/infrastructure/orm/sequelize/sequelize');
 const createServer = require('./lib/infrastructure/webserver/server');
 
 // Start the server
