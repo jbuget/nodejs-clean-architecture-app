@@ -1,4 +1,4 @@
-const UserRepository = require('../../../lib/application/repositories/UserRepository');
+const UserRepository = require('../../../lib/domain/UserRepository');
 const mockUserRepository = new UserRepository();
 const DeleteUser = require('../../../lib/application/use_cases/DeleteUser');
 
