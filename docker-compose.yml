@@ -5,6 +5,12 @@ services:
   postgres:
     image: postgres
     restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: dda-accounts
 
   mongo:
     image: mongo
@@ -14,4 +20,4 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: test
+      MONGO_INITDB_DATABASE: dda-items

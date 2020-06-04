@@ -1,5 +1,5 @@
-const SayHello = require('../../../lib/application/use_cases/SayHello');
-const HelloController = require('../../../lib/interfaces/controllers/HelloController');
+const SayHello = require('../../../lib/application/use_cases/say-hello');
+const HelloController = require('../../../lib/interfaces/controllers/api-controller');
 
 jest.mock('../../../lib/application/use_cases/SayHello');
 
@@ -10,7 +10,7 @@ describe('#sayHelloWorld', () => {
     SayHello.mockImplementationOnce(() => 'Bonjour monde !');
 
     // when
-    const response = await HelloController.sayHelloWorld();
+    const response = await HelloController.getInfo();
 
     // then
     expect(response).toBe('Bonjour monde !');

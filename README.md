@@ -6,6 +6,7 @@
 git clone git@github.com:jbuget/nodejs-clean-architecture-app.git
 cd nodejs-clean-architecture-app
 npm install
+docker-compose up -d
 npm test
 npm start
 ```
@@ -102,3 +103,11 @@ It may have a constructor to define its dependencies (concrete implementations -
 **Be careful! A use case must have only one precise business responsibility!**
 
 A use case can call objects in the same layer (such as data repositories) or in the domain layer.
+
+## Problems
+
+### Security
+
+### Validation
+
+https://ikenox.info/blog/where-to-put-validation-in-clean-architecture/

@@ -1,7 +1,7 @@
-const User = require('../../../lib/domain/User');
-const UserRepository = require('../../../lib/domain/UserRepository');
+const User = require('../../../lib/domain/accounts/User');
+const UserRepository = require('../../../lib/domain/accounts/UserRepository');
 const mockUserRepository = new UserRepository();
-const GetUser = require('../../../lib/application/use_cases/GetUser');
+const GetUser = require('../../../lib/application/use_cases/accounts/get-user');
 
 test('should resolve with the corresponding persisted user entity', async () => {
   // given
